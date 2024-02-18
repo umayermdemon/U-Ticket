@@ -1,3 +1,4 @@
+// ticket button
 let totalPrice=0;
 let seatCount=0;
 let seatLeft=40;
@@ -43,4 +44,70 @@ for( let btn of buttons){
 
 
 // coupon button
-const couponButton= document.getElementById('apply-button')
+const couponButton= document.getElementById('apply-button');
+couponButton.addEventListener('click', function(){
+  const couponValue=document.getElementById('coupon-value').value;
+  if(seatCount===4){
+    // 15% discount
+    if(couponValue==='NEW15'){
+      const discTitle=document.createElement("p");
+      discTitle.innerText='Discount Price';
+      const discountTitle= document.getElementById('discount-title');
+      discountTitle.appendChild(discTitle);
+      // discount amount
+      const discountAmount=totalPrice*0.15;
+      const discPrice=document.createElement("p");
+      discPrice.innerText='BDT'+" "+discountAmount;
+      const discountPrice=document.getElementById('discount-price');
+      discountPrice.appendChild(discPrice);
+
+      // grand total
+      const grandTotal= totalPrice-discountAmount;
+      const grandTotalPrice=document.getElementById('grand-total-price');
+      grandTotalPrice.innerText=grandTotal;
+
+      // remove coupon container
+
+      const couponContainer=document.getElementById('coupon-container');
+      couponContainer.classList.add('hidden')
+    }
+
+    // 20% discount
+    if(couponValue==='Couple 20'){
+      const discTitle=document.createElement("p");
+      discTitle.innerText='Discount Price';
+      const discountTitle= document.getElementById('discount-title');
+      discountTitle.appendChild(discTitle);
+      // discount amount
+      const discountAmount=totalPrice*0.2;
+      const discPrice=document.createElement("p");
+      discPrice.innerText='BDT'+" "+discountAmount;
+      const discountPrice=document.getElementById('discount-price');
+      discountPrice.appendChild(discPrice);
+
+      // grand total
+      const grandTotal= totalPrice-discountAmount;
+      const grandTotalPrice=document.getElementById('grand-total-price');
+      grandTotalPrice.innerText=grandTotal;
+
+      // remove coupon container
+
+      const couponContainer=document.getElementById('coupon-container');
+      couponContainer.classList.add('hidden')
+    }
+  }
+})
+
+
+// next button
+
+const nextButton= document.getElementById('next-btn');
+nextButton.addEventListener('click', function(){
+  const phnNumber=document.getElementById('number');
+  if(phnNumber==='number'){
+    const success=document.getElementById('success');
+    const body=document.getElementById('body');
+    success.classList.remove('hidden');
+    body.classList.add('hidden')
+  }
+})
