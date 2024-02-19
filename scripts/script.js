@@ -101,6 +101,9 @@ couponButton.addEventListener('click', function(){
       couponContainer.classList.add('hidden')
     }
   }
+  else{
+    alert("Please booked at least four seats");
+  }
 })
 
 
@@ -111,12 +114,11 @@ nextButton.addEventListener('click', function(){
   const phnNUmber=parseInt(document.getElementById('number').value);
   const phnNUmberStr=document.getElementById('number').value;
   if(seatCount>0 && !isNaN(phnNUmber) && phnNUmberStr.length===11){
-  hideElementById('header');
-  hideElementById('offer-section');
-  hideElementById('ticket-section');
-  hideElementById('footer');
   showElementById('success');
-  }  
+  }
+  else{
+    alert("Please purchase at least one seat & put a valid phone number")
+  }
 })
 // continue button
 

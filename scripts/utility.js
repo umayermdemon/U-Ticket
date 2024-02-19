@@ -20,13 +20,3 @@ function setInnerValueById(elementId, value){
   const element=document.getElementById(elementId);
   element.value=value;
 }
-
-
-
-const parentElement = document.getElementById("parentElement");
-
-function refreshAppendedChild() {
-    while (parentElement.firstChild){
-        parentElement.removeChild(parentElement.firstChild);
-    }
-}
