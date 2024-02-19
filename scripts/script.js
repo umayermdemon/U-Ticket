@@ -122,26 +122,5 @@ nextButton.addEventListener('click', function(){
 
 const continueButton= document.getElementById('continue-button');
 continueButton.addEventListener('click', function(){
-  showElementById('header');
-  showElementById('offer-section');
-  showElementById('ticket-section');
-  showElementById('footer');
-  hideElementById('success');
-  setInnerTextValueById('seat', 0);
-  setInnerTextValueById('seat-left', 40);
-  setInnerTextValueById('total-price-container', 0);
-  setInnerTextValueById('grand-total-price', 0);
-  setInnerValueById('number', ' ');
-  setInnerValueById('coupon-value', '');
-  setInnerTextValueById('seat-container', '');
-  setInnerTextValueById('class-container', '');
-  setInnerTextValueById('price-container', '');
-  setInnerTextValueById('discount-title', '');
-  setInnerTextValueById('discount-price', '');
-  const buttons= document.querySelectorAll('#btn');
-  for(let btn of buttons){
-  btn.classList.remove('bg-[#1DD100]', 'text-white'); 
-  
-  }
-  
+  window.location.reload();
 })
