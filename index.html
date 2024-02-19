@@ -65,10 +65,9 @@
    <div class="mt-4 lg:mt-10">
       <div class="relative">
         <img src="images/banner.png" alt="" class="w-[95%] lg:w-full h-[230px] lg:h-full mx-2">
-        <div class="absolute text-center top-4 left-10 lg:top-24 lg:left-60  space-y-1 lg:space-y-8">
+        <div class="absolute text-center top-4 lg:top-24 left-12  lg:left-60  space-y-1 lg:space-y-8">
           <h1 class="text-xl lg:text-7xl font-extrabold font-raleway text-white">End-to-End Travel with </h1>
           <h1 class="text-xl lg:text-7xl font-extrabold font-raleway text-[#1DD100]"> U Paribahan</h1>
-
           <p class="text-sm lg:text-base text-white font-inter w-[280px] lg:w-[600px] mx-auto">"Journey with us to explore wonders untold. From serene beaches to bustling cities. Let's make your travel dreams a reality."</p>
           <button class="btn bg-[#1DD100] hover:bg-[#1DD100] px-2 lg:px-4 text-black text-sm lg:text-xl font-bold border-none font-raleway"><a href="#ticket-section">Buy Tickets</a></button>
         </div>
@@ -331,7 +330,7 @@
         <div class="basis-2/5 pl-4">
           <h3 class="text-black font-raleway text-xl font-bold border-dotted border-b-2 pb-5">Select Your Seat</h3>
           <!-- price section -->
-          <div class="bg-[#F7F8F8]  my-4 py-2 rounded-xl">
+          <div class="bg-[#F7F8F8] my-4 py-2 rounded-xl">
             <div class="p-4 border-dashed border-b-2 w-[94%] mx-auto">
               <div class="flex flex-row justify-between px-4 font-inter font-semibold">
                 <p>Seat <span id="seat" class="bg-[#1DD100] p-1 rounded-md text-white text-xs ">0</span></p>
@@ -398,15 +397,15 @@
           </div>
           <!-- modal popup -->
           <div id="success" class="hidden">
-            <div  class=" absolute top-56  left-72 flex justify-center items-center">
-              <div class="bg-white border border-dashed border-gray-400 h-[480px] w-[700px] rounded-xl flex flex-col items-center justify-center text-center space-y-4">
-              <img src="images/success.png" alt="">
-              <h2 class="text-[#27AE60] font-bold text-2xl">Success</h2>
-              <p class="text-xl font-semibold">Thank you for Booking Our Bus Seats. <br> 
+            <div  class=" absolute top-[1200px] lg:top-56 left-4  lg:left-96 flex justify-center items-center">
+              <div class="bg-white border border-dashed border-gray-400 h-[250px] lg:h-[400px] w-[320px] lg:w-[510px] rounded-xl flex flex-col items-center justify-center text-center space-y-3 p-1 lg:p-3">
+              <img src="images/success.png" alt="" class="h-7 lg:h-auto w-7 lg:w-auto">
+              <h2 class="text-[#27AE60] font-bold text-xs lg:text-xl">Success</h2>
+              <p class="text-xs lg:text-base font-semibold">Thank you for Booking Our Bus Seats. <br> 
                 We are working hard to find the best service and deals for you. 
               </p>
-              <p class="text-[#4A4A4A] text-xl">Shortly you will find a confirmation in your email.</p>
-              <button id="continue-button" class="btn bg-[#27AE60] hover:bg-[#27AE60] text-white font-medium text-xl">Continue</button>
+              <p class="text-[#4A4A4A] text-xs lg:text-base">Shortly you will find a confirmation in your email.</p>
+              <button id="continue-button" class="btn bg-[#27AE60] hover:bg-[#27AE60] text-white font-medium text-xs lg:text-base">Continue</button>
             </div>
             </div>
            </div>
@@ -421,8 +420,33 @@
     <!-- success section -->
   </main>
   
-  <footer id="footer">
-  
+  <footer class=" p-14 bg-[#030712] text-neutral-content">
+    <div class="flex flex-col lg:flex-row mx-auto max-w-7xl justify-between border-dashed border-gray-400 border-b-2 pb-8">
+      <div class="space-y-4">
+        <h2 class="text-5xl text-white font-bold">U-Ticket</h2>
+        <p class="text-base text-[#FFFFFFCC]">U-Ticket is a digital platform to make your <br> daily commuting better.</p>
+      </div> 
+      <div class="space-y-4 pt-8 lg:pt-0">
+        <h6 class="text-2xl font-raleway font-semibold">Download our app</h6> 
+        <button class="btn bg-[#030712] hover:bg-[#030712] text-white">
+          <img src="images/playstore.png" alt="">
+          <div class=" ml-2 text-left">
+          <p>Get it on</p>
+          <p class="text-lg">Google Play</p>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="max-w-7xl flex flex-col lg:flex-row justify-between mx-auto pt-8">
+    <div>
+        <p>@all rights reserved, U-Ticket services limited.2024</p>
+      </div>
+      <div class="flex flex-row pt-4 lg:pt-0 list-none space-x-2 lg:space-x-4">
+        <li><a href="">Terms & condition</a></li>
+        <li><a href="">Return & refund policy</a></li>
+        <li><a href="">Privacy policy</a></li>
+      </div>
+    </div>
   </footer>
 
   <script src="scripts/utility.js"></script>
