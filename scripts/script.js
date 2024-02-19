@@ -5,39 +5,44 @@ let seatLeft=40;
 const buttons= document.querySelectorAll('#btn');
 for( let btn of buttons){
     btn.addEventListener('click', function(){
-      if(seatCount<4){
-        btn.classList.add('bg-[#1DD100]', 'text-white');
-      const seat=btn.innerText;
-      const seatText= document.createElement("p");
-      seatText.innerText=seat;
-      const seatClass = document.createElement('p');
-      seatClass.innerText='Economy';
-      const seatPrice = document.createElement('p');
-      seatPrice.innerText='550';
-      // appendChild
-      const seatContainer=document.getElementById('seat-container');
-      seatContainer.appendChild(seatText);
-      const classContainer=document.getElementById('class-container');
-      classContainer.appendChild(seatClass);
-      const priceContainer=document.getElementById('price-container');
-      priceContainer.appendChild(seatPrice);
-    
-      // totalPrice Count
-      const perSeatPrice= parseFloat(seatPrice.innerText);
-      totalPrice+=perSeatPrice;
-      const totalPriceContainer=document.getElementById('total-price-container');
-      totalPriceContainer.innerText=totalPrice;
-    
-      // seat count+
-      seatCount+=1;
-      const seatIncrease=document.getElementById('seat');
-      seatIncrease.innerText=seatCount;
-    
-      // seat count-
-      seatLeft=seatLeft-1;
-      const seatDecrease=document.getElementById('seat-left');
-      seatDecrease.innerText=seatLeft;
- }
+    if(seatCount<4){
+    btn.classList.add('bg-[#1DD100]', 'text-white');
+    const seat=btn.innerText;
+    const seatText= document.createElement("p");
+    seatText.innerText=seat;
+    const seatClass = document.createElement('p');
+    seatClass.innerText='Economy';
+    const seatPrice = document.createElement('p');
+    seatPrice.innerText='550';
+    // appendChild
+    const seatContainer=document.getElementById('seat-container');
+    seatContainer.appendChild(seatText);
+    const classContainer=document.getElementById('class-container');
+    classContainer.appendChild(seatClass);
+    const priceContainer=document.getElementById('price-container');
+    priceContainer.appendChild(seatPrice);
+  
+    // totalPrice Count
+    const perSeatPrice= parseFloat(seatPrice.innerText);
+    totalPrice+=perSeatPrice;
+    const totalPriceContainer=document.getElementById('total-price-container');
+    totalPriceContainer.innerText=totalPrice;
+    // grand total price
+    const grandTotalPrice=document.getElementById('grand-total-price');
+    grandTotalPrice.innerText=totalPrice;
+  
+    // seat count+
+    seatCount+=1;
+    const seatIncrease=document.getElementById('seat');
+    seatIncrease.innerText=seatCount;
+  
+    // seat count-
+    seatLeft=seatLeft-1;
+    const seatDecrease=document.getElementById('seat-left');
+    seatDecrease.innerText=seatLeft;
+     
+    }
+      
 })
       
 }
@@ -69,7 +74,7 @@ couponButton.addEventListener('click', function(){
       // remove coupon container
 
       const couponContainer=document.getElementById('coupon-container');
-      couponContainer.classList.add('hidden')
+      couponContainer.classList.add('hidden');
     }
 
     // 20% discount
@@ -103,11 +108,40 @@ couponButton.addEventListener('click', function(){
 
 const nextButton= document.getElementById('next-btn');
 nextButton.addEventListener('click', function(){
-  const phnNumber=document.getElementById('number');
-  if(phnNumber==='number'){
-    const success=document.getElementById('success');
-    const body=document.getElementById('body');
-    success.classList.remove('hidden');
-    body.classList.add('hidden')
+  const phnNUmber=parseInt(document.getElementById('number').value);
+  const phnNUmberStr=document.getElementById('number').value;
+  if(seatCount>0 && !isNaN(phnNUmber) && phnNUmberStr.length===11){
+  hideElementById('header');
+  hideElementById('offer-section');
+  hideElementById('ticket-section');
+  hideElementById('footer');
+  showElementById('success');
+  }  
+})
+// continue button
+
+const continueButton= document.getElementById('continue-button');
+continueButton.addEventListener('click', function(){
+  showElementById('header');
+  showElementById('offer-section');
+  showElementById('ticket-section');
+  showElementById('footer');
+  hideElementById('success');
+  setInnerTextValueById('seat', 0);
+  setInnerTextValueById('seat-left', 40);
+  setInnerTextValueById('total-price-container', 0);
+  setInnerTextValueById('grand-total-price', 0);
+  setInnerValueById('number', ' ');
+  setInnerValueById('coupon-value', '');
+  setInnerTextValueById('seat-container', '');
+  setInnerTextValueById('class-container', '');
+  setInnerTextValueById('price-container', '');
+  setInnerTextValueById('discount-title', '');
+  setInnerTextValueById('discount-price', '');
+  const buttons= document.querySelectorAll('#btn');
+  for(let btn of buttons){
+  btn.classList.remove('bg-[#1DD100]', 'text-white'); 
+  
   }
+  
 })
